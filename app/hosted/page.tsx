@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Server, Shield, Zap, HeadphonesIcon, Database, Cloud } from 'lucide-react'
+import { ArrowRight, Server, Shield, Zap, HeadphonesIcon, Database, Cloud, Palette } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -25,9 +25,9 @@ const benefits = [
     description: 'Enterprise-grade security with regular updates, SSL certificates, and compliance standards.',
   },
   {
-    icon: HeadphonesIcon,
-    title: 'Professional Support',
-    description: 'Get help when you need it with priority support and dedicated account management.',
+    icon: Palette,
+    title: 'Custom Branding',
+    description: 'We customize your platform with your own branding - platform name, logos, favicon, and SEO metadata to match your organization\'s identity.',
   },
   {
     icon: Database,
