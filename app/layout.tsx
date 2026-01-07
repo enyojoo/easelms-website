@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description: 'Build, deploy, and scale your learning platform.',
     images: [
       {
-        url: 'https://cldup.com/HnQy8q9nm5.png',
+        url: 'https://cldup.com/xDE0cJVUSK.png',
         width: 1200,
         height: 630,
         alt: 'EaseLMS - Free Modern Open-Source LMS',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'EaseLMS - Free Modern Open-Source LMS',
     description: 'Build, deploy, and scale your learning platform.',
-    images: ['https://cldup.com/HnQy8q9nm5.png'],
+    images: ['https://cldup.com/xDE0cJVUSK.png'],
   },
 }
 
