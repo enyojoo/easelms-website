@@ -11,11 +11,9 @@ import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Features', href: '/features' },
-  { name: 'Pricing', href: '/pricing' },
   { name: 'Open Source', href: '/open-source' },
   { name: 'Hosted', href: '/hosted' },
-  { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 export function Header() {
@@ -24,9 +22,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Logo className="h-8 w-auto" />
+          <Logo className="h-5 w-auto sm:h-6 md:h-7" />
         </div>
         <div className="flex lg:hidden">
           <button
@@ -42,7 +40,7 @@ export function Header() {
             )}
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:gap-x-6 xl:gap-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -56,26 +54,23 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-3 xl:gap-4">
           <ThemeToggle />
-          <Button asChild variant="outline">
-            <Link href="/contact">Contact</Link>
-          </Button>
-          <Button asChild>
+          <Button asChild size="sm" className="hidden xl:inline-flex">
             <Link href="/pricing">Get Started</Link>
           </Button>
         </div>
       </nav>
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden">
-          <div className="space-y-1 px-4 pb-3 pt-2">
+        <div className="lg:hidden border-t">
+          <div className="px-4 py-4 space-y-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'block rounded-md px-3 py-2 text-base font-semibold leading-7 transition-colors',
+                  'block rounded-md px-3 py-2.5 text-base font-semibold leading-7 transition-colors',
                   pathname === item.href
                     ? 'bg-accent text-accent-foreground'
                     : 'text-foreground hover:bg-accent hover:text-accent-foreground'
@@ -85,13 +80,13 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="mt-4 flex items-center gap-4">
-              <ThemeToggle />
-              <Button asChild variant="outline" className="flex-1">
-                <Link href="/contact">Contact</Link>
-              </Button>
-              <Button asChild className="flex-1">
-                <Link href="/pricing">Get Started</Link>
+            <div className="pt-4 mt-4 border-t space-y-3">
+              <div className="flex items-center justify-between px-3">
+                <span className="text-sm font-medium text-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
+              <Button asChild className="w-full" size="lg">
+                <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
               </Button>
             </div>
           </div>

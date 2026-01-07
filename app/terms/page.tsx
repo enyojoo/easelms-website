@@ -1,6 +1,6 @@
 export default function TermsPage() {
   return (
-    <div className="py-24 sm:py-32">
+    <div className="bg-background pt-24 sm:pt-32 pb-6 sm:pb-8">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-8">
           Terms of Service
@@ -47,8 +47,8 @@ export default function TermsPage() {
           <h2 className="text-2xl font-bold mt-8 mb-4">Contact Us</h2>
           <p className="text-muted-foreground mb-8">
             If you have questions about these Terms, please contact us at{' '}
-            <a href="mailto:legal@easelms.com" className="text-primary hover:underline">
-              legal@easelms.com
+            <a href="mailto:legal@easelms.org" className="text-primary hover:underline">
+              legal@easelms.org
             </a>
           </p>
         </div>

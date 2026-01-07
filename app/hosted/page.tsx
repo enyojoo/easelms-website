@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import { Check, ArrowRight, Server, Shield, Zap, HeadphonesIcon, Database, Cloud } from 'lucide-react'
+import { ArrowRight, Server, Shield, Zap, HeadphonesIcon, Database, Cloud } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { CTASection } from '@/components/marketing/CTASection'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 const benefits = [
   {
@@ -39,24 +38,24 @@ const benefits = [
 
 export default function HostedPage() {
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-background pt-12 sm:pt-20 lg:pt-32 pb-6 sm:pb-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
             Hosted Service
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground px-2 sm:px-0">
             Let us handle the infrastructure while you focus on creating amazing learning experiences.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button asChild size="lg">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-6">
+            <Button asChild size="lg" className="text-sm sm:text-base w-full sm:w-auto">
               <Link href="/pricing">
                 Start Free Trial
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="text-sm sm:text-base w-full sm:w-auto">
               <Link href="/contact">
                 Schedule Demo
               </Link>
@@ -65,9 +64,9 @@ export default function HostedPage() {
         </div>
 
         {/* Benefits */}
-        <div className="mx-auto mt-24 max-w-5xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Hosted?</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 max-w-5xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Why Choose Hosted?</h2>
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
               const Icon = benefit.icon
               return (
@@ -76,130 +75,15 @@ export default function HostedPage() {
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <CardTitle>{benefit.title}</CardTitle>
-                    <CardDescription className="mt-2">{benefit.description}</CardDescription>
+                    <CardTitle className="text-lg sm:text-xl">{benefit.title}</CardTitle>
+                    <CardDescription className="mt-2 text-sm sm:text-base">{benefit.description}</CardDescription>
                   </CardHeader>
                 </Card>
               )
             })}
           </div>
         </div>
-
-        {/* Infrastructure Details */}
-        <div className="mx-auto mt-24 max-w-3xl">
-          <Card>
-            <CardHeader>
-              <CardTitle>Infrastructure & Technology</CardTitle>
-              <CardDescription>Built on modern, reliable infrastructure</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p className="font-semibold">Supabase</p>
-                    <p className="text-sm text-muted-foreground">Managed PostgreSQL database with real-time capabilities</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p className="font-semibold">Vercel</p>
-                    <p className="text-sm text-muted-foreground">Global CDN and edge network for fast content delivery</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p className="font-semibold">AWS S3 & CloudFront</p>
-                    <p className="text-sm text-muted-foreground">Scalable storage and content delivery for media files</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p className="font-semibold">Automatic Updates</p>
-                    <p className="text-sm text-muted-foreground">Stay up-to-date with the latest features and security patches</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Migration */}
-        <div className="mx-auto mt-24 max-w-3xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Migration Assistance</h2>
-            <p className="text-lg text-muted-foreground">
-              Already self-hosting? We'll help you migrate to our hosted service.
-            </p>
-          </div>
-          <Card>
-            <CardContent className="p-6">
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-muted-foreground">Free data migration assistance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-muted-foreground">Zero downtime migration process</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-muted-foreground">Dedicated migration support</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-muted-foreground">Training and onboarding included</span>
-                </li>
-              </ul>
-              <Button asChild className="mt-6">
-                <Link href="/contact">
-                  Contact Us About Migration
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Free Trial */}
-        <div className="mx-auto mt-24 max-w-2xl text-center">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">14-Day Free Trial</CardTitle>
-              <CardDescription className="text-base">
-                Try our hosted service risk-free. No credit card required.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-left mb-6">
-                <li className="flex items-center gap-2">
-                  <Check className="h-5 w-5 text-primary" />
-                  <span>Full access to all features</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-5 w-5 text-primary" />
-                  <span>Dedicated support during trial</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-5 w-5 text-primary" />
-                  <span>No commitment required</span>
-                </li>
-              </ul>
-              <Button asChild size="lg" className="w-full">
-                <Link href="/pricing">
-                  Start Your Free Trial
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
       </div>
-      <CTASection />
     </div>
   )
 }

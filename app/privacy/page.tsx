@@ -1,6 +1,6 @@
 export default function PrivacyPage() {
   return (
-    <div className="py-24 sm:py-32">
+    <div className="bg-background pt-24 sm:pt-32 pb-6 sm:pb-8">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-8">
           Privacy Policy
@@ -43,8 +43,8 @@ export default function PrivacyPage() {
           <h2 className="text-2xl font-bold mt-8 mb-4">Contact Us</h2>
           <p className="text-muted-foreground mb-8">
             If you have questions about this Privacy Policy, please contact us at{' '}
-            <a href="mailto:privacy@easelms.com" className="text-primary hover:underline">
-              privacy@easelms.com
+            <a href="mailto:privacy@easelms.org" className="text-primary hover:underline">
+              privacy@easelms.org
             </a>
           </p>
         </div>

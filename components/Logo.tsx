@@ -34,8 +34,8 @@ export function Logo({ className = '', variant = 'full' }: LogoProps) {
       <div
         className={cn('flex items-center animate-pulse bg-muted rounded', className)}
         style={{
-          minHeight: variant === 'icon' ? '28px' : '32px',
-          minWidth: variant === 'icon' ? '28px' : '100px',
+          minHeight: variant === 'icon' ? '24px' : '20px',
+          minWidth: variant === 'icon' ? '24px' : '60px',
         }}
       />
     )
@@ -46,10 +46,11 @@ export function Logo({ className = '', variant = 'full' }: LogoProps) {
       <Image
         src={logoSrc}
         alt="EaseLMS"
-        width={variant === 'icon' ? 28 : 100}
-        height={variant === 'icon' ? 28 : 32}
-        className="h-auto w-auto"
+        width={variant === 'icon' ? 24 : 60}
+        height={variant === 'icon' ? 24 : 20}
+        className="h-auto w-auto max-h-full"
         priority
+        sizes="(max-width: 640px) 60px, (max-width: 1024px) 70px, 80px"
       />
     </Link>
   )

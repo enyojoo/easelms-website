@@ -1,117 +1,74 @@
-import Link from 'next/link'
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react'
+'use client'
 
-const footerNavigation = {
-  product: [
-    { name: 'Features', href: '/features' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Open Source', href: '/open-source' },
-    { name: 'Hosted Service', href: '/hosted' },
-  ],
-  company: [
-    { name: 'About', href: '/about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
-  ],
-  legal: [
-    { name: 'Privacy', href: '/privacy' },
-    { name: 'Terms', href: '/terms' },
-  ],
-  social: [
-    {
-      name: 'GitHub',
-      href: 'https://github.com/enyojoo/easelms',
-      icon: Github,
-    },
-    {
-      name: 'Twitter',
-      href: '#',
-      icon: Twitter,
-    },
-    {
-      name: 'LinkedIn',
-      href: '#',
-      icon: Linkedin,
-    },
-    {
-      name: 'Email',
-      href: 'mailto:contact@easelms.com',
-      icon: Mail,
-    },
-  ],
-}
+import Link from 'next/link'
+import { Github, ArrowRight } from 'lucide-react'
+import { Logo } from '@/components/Logo'
+import { Button } from '@/components/ui/button'
+import { CTASection } from '@/components/marketing/CTASection'
 
 export function Footer() {
   return (
-    <footer className="bg-muted/50 border-t">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-foreground">Product</h3>
-            <ul role="list" className="mt-6 space-y-4">
-              {footerNavigation.product.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-foreground">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-foreground">Company</h3>
-            <ul role="list" className="mt-6 space-y-4">
-              {footerNavigation.company.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-foreground">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-foreground">Legal</h3>
-            <ul role="list" className="mt-6 space-y-4">
-              {footerNavigation.legal.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-foreground">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-foreground">Connect</h3>
-            <ul role="list" className="mt-6 flex space-x-6">
-              {footerNavigation.social.map((item) => {
-                const Icon = item.icon
-                return (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-muted-foreground hover:text-foreground"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="sr-only">{item.name}</span>
-                      <Icon className="h-6 w-6" aria-hidden="true" />
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+    <>
+      <CTASection />
+      <footer className="bg-background border-t">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12 lg:px-8">
+        {/* Logo and Description */}
+        <div className="flex flex-col items-center mb-8">
+          <Logo className="h-8 w-auto sm:h-10 mb-4" />
+          <p className="text-sm text-muted-foreground text-center max-w-md">
+            The modern open-source learning management system. Build, deploy, and scale your learning platform.
+          </p>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex justify-center space-x-6 mb-6">
+          <Link
+            href="https://github.com/enyojoo/easelms"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <Github className="h-5 w-5 sm:h-6 sm:w-6" />
+          </Link>
+          <Link
+            href="https://x.com/enyosaam"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+          >
+            <svg
+              className="h-5 w-5 sm:h-6 sm:w-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Privacy and Terms */}
+        <div className="flex justify-center space-x-6 mb-6">
+          <Link href="/privacy" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Privacy
+          </Link>
+          <Link href="/terms" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Terms
+          </Link>
         </div>
       </div>
+      
+      {/* Copyright */}
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 py-4 lg:px-8">
-          <p className="text-xs leading-5 text-muted-foreground">
-            &copy; {new Date().getFullYear()} EaseLMS. All rights reserved.
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-3 sm:py-4 lg:px-8">
+          <p className="text-xs leading-5 text-muted-foreground text-center">
+            &copy; {new Date().getFullYear()} Easner, Inc.
           </p>
         </div>
       </div>
     </footer>
+    </>
   )
 }

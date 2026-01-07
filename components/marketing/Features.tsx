@@ -49,17 +49,17 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="features" className="bg-background pt-16 sm:pt-24 lg:pt-32 pb-6 sm:pb-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
             Everything you need to run your learning platform
           </h2>
-          <p className="mt-2 text-lg leading-8 text-muted-foreground">
+          <p className="mt-2 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground px-2 sm:px-0">
             Powerful features designed for modern educational institutions and training organizations.
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+        <div className="mx-auto mt-12 sm:mt-16 grid max-w-2xl grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (

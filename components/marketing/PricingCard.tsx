@@ -26,6 +26,7 @@ interface PricingCardProps {
 
 export function PricingCard({ tier, billingPeriod }: PricingCardProps) {
   const price = billingPeriod === 'monthly' ? tier.price.monthly : tier.price.yearly
+  const isCustom = price.toLowerCase() === 'custom'
 
   return (
     <Card className={cn('relative flex flex-col', tier.popular && 'border-primary shadow-lg')}>
@@ -41,9 +42,11 @@ export function PricingCard({ tier, billingPeriod }: PricingCardProps) {
         <CardDescription className="mt-2">{tier.description}</CardDescription>
         <div className="mt-4">
           <span className="text-4xl font-bold">{price}</span>
-          <span className="text-muted-foreground">/{billingPeriod === 'monthly' ? 'month' : 'year'}</span>
+          {!isCustom && (
+            <span className="text-muted-foreground">/{billingPeriod === 'monthly' ? 'month' : 'year'}</span>
+          )}
         </div>
-        {billingPeriod === 'yearly' && (
+        {billingPeriod === 'yearly' && !isCustom && (
           <p className="mt-2 text-sm text-muted-foreground">
             Save 20% with annual billing
           </p>

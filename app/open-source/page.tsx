@@ -2,24 +2,23 @@ import Link from 'next/link'
 import { Github, Code, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { CTASection } from '@/components/marketing/CTASection'
 
 export default function OpenSourcePage() {
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-background pt-12 sm:pt-20 lg:pt-32 pb-6 sm:pb-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
             Open Source. Community Driven.
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground px-2 sm:px-0">
             EaseLMS is open-source and free to use. Deploy it yourself, customize it, and contribute back to the community.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button asChild size="lg">
+          <div className="mt-8 sm:mt-10 flex items-center justify-center gap-x-6">
+            <Button asChild size="lg" className="text-sm sm:text-base">
               <Link href="https://github.com/enyojoo/easelms" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
+                <Github className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Star on GitHub
               </Link>
             </Button>
@@ -69,9 +68,9 @@ export default function OpenSourcePage() {
         */}
 
         {/* Why Open Source */}
-        <div className="mx-auto mt-24 max-w-3xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Open Source?</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 max-w-3xl px-4 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Why Open Source?</h2>
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 md:grid-cols-2">
             <Card>
               <CardHeader>
                 <CardTitle>Transparency</CardTitle>
@@ -108,14 +107,14 @@ export default function OpenSourcePage() {
         </div>
 
         {/* Quick Start */}
-        <div className="mx-auto mt-24 max-w-3xl">
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 max-w-3xl px-4 sm:px-0">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <Code className="h-6 w-6 text-primary" />
-                <CardTitle>Quick Start</CardTitle>
+                <Code className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                <CardTitle className="text-lg sm:text-xl">Quick Start</CardTitle>
               </div>
-              <CardDescription>Get started in minutes</CardDescription>
+              <CardDescription className="text-sm sm:text-base">Get started in minutes</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="rounded-lg bg-muted p-4 font-mono text-sm">
@@ -205,7 +204,7 @@ export default function OpenSourcePage() {
         </div>
 
         {/* License */}
-        <div className="mx-auto mt-24 mb-24 max-w-2xl text-center">
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 max-w-2xl text-center">
           <h2 className="text-2xl font-bold mb-4">License</h2>
           <p className="text-muted-foreground">
             EaseLMS is licensed under the{' '}
@@ -220,7 +219,6 @@ export default function OpenSourcePage() {
           </p>
         </div>
       </div>
-      <CTASection />
     </div>
   )
 }

@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { PricingCard, PricingTier } from '@/components/marketing/PricingCard'
-import { CTASection } from '@/components/marketing/CTASection'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -79,34 +78,38 @@ export default function PricingPage() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly')
 
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-background pt-12 sm:pt-20 lg:pt-32 pb-6 sm:pb-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
             Simple, transparent pricing
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground px-2 sm:px-0">
             Choose the plan that's right for you. All plans include a 14-day free trial.
           </p>
         </div>
 
         {/* Billing Toggle */}
-        <div className="mt-10 flex items-center justify-center">
+        <div className="mt-8 sm:mt-10 flex items-center justify-center">
           <div className="inline-flex rounded-lg bg-muted p-1">
             <Button
               variant={billingPeriod === 'monthly' ? 'default' : 'ghost'}
               onClick={() => setBillingPeriod('monthly')}
-              className="rounded-md"
+              className="rounded-md text-sm sm:text-base"
             >
               Monthly
             </Button>
             <Button
               variant={billingPeriod === 'yearly' ? 'default' : 'ghost'}
               onClick={() => setBillingPeriod('yearly')}
-              className="rounded-md"
+              className="rounded-md text-sm sm:text-base"
             >
               Yearly
-              <span className="ml-2 rounded-full bg-primary/20 px-2 py-0.5 text-xs text-primary">
+              <span className={`ml-2 rounded-full px-2 py-0.5 text-xs ${
+                billingPeriod === 'yearly' 
+                  ? 'bg-primary-foreground/20 text-primary-foreground' 
+                  : 'bg-primary/20 text-primary'
+              }`}>
                 Save 20%
               </span>
             </Button>
@@ -114,21 +117,21 @@ export default function PricingPage() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="mx-auto mt-12 sm:mt-16 grid max-w-5xl grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {pricingTiers.map((tier) => (
             <PricingCard key={tier.name} tier={tier} billingPeriod={billingPeriod} />
           ))}
         </div>
 
         {/* All Plans Include */}
-        <div className="mx-auto mt-24 max-w-2xl">
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 max-w-2xl">
           <Card>
             <CardHeader>
-              <CardTitle>All plans include</CardTitle>
-              <CardDescription>Everything you need to get started</CardDescription>
+              <CardTitle className="text-lg sm:text-xl">All plans include</CardTitle>
+              <CardDescription className="text-sm sm:text-base">Everything you need to get started</CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <ul className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
                 <li className="flex items-start gap-2">
                   <span className="text-primary">✓</span>
                   <span className="text-sm text-muted-foreground">14-day free trial</span>
@@ -159,30 +162,30 @@ export default function PricingPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mx-auto mt-24 max-w-3xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-8">
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 max-w-3xl px-4 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-6 sm:space-y-8">
             <div>
-              <h3 className="text-lg font-semibold mb-2">Can I change plans later?</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Can I change plans later?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">What happens after my free trial?</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">What happens after my free trial?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
                 After your 14-day free trial, you'll be asked to choose a plan. Your data is safe and you can continue where you left off.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">Do you offer refunds?</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Do you offer refunds?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Yes, we offer a 30-day money-back guarantee. If you're not satisfied, contact us for a full refund.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">Can I self-host for free?</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Can I self-host for free?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Absolutely! EaseLMS is open-source and you can deploy it yourself for free. Check out our{' '}
                 <a href="/open-source" className="text-primary hover:underline">open-source page</a> for more information.
               </p>
@@ -190,7 +193,6 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
-      <CTASection />
     </div>
   )
 }

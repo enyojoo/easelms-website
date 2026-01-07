@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, systemTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -14,32 +14,37 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1">
-        <Button variant="ghost" size="icon" className="h-7 w-7">
-          <Sun className="h-4 w-4" />
-        </Button>
-      </div>
+      <Button variant="ghost" size="icon" className="h-9 w-9">
+        <Sun className="h-4 w-4" />
+      </Button>
     )
   }
 
+  // Determine current effective theme
+  const currentTheme = theme === "system" ? systemTheme : theme
+  const isDark = currentTheme === "dark"
+
+  const toggleTheme = () => {
+    if (isDark) {
+      setTheme("light")
+    } else {
+      setTheme("dark")
+    }
+  }
+
   return (
-    <div className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1">
-      <Button
-        variant={theme === "light" ? "secondary" : "ghost"}
-        size="icon"
-        className="h-7 w-7"
-        onClick={() => setTheme("light")}
-      >
+    <Button
+      variant="ghost"
+      size="icon"
+      className="h-9 w-9"
+      onClick={toggleTheme}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {isDark ? (
         <Sun className="h-4 w-4" />
-      </Button>
-      <Button
-        variant={theme === "dark" ? "secondary" : "ghost"}
-        size="icon"
-        className="h-7 w-7"
-        onClick={() => setTheme("dark")}
-      >
+      ) : (
         <Moon className="h-4 w-4" />
-      </Button>
-    </div>
+      )}
+    </Button>
   )
 }

@@ -1,5 +1,3 @@
-import { Features } from '@/components/marketing/Features'
-import { CTASection } from '@/components/marketing/CTASection'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { BookOpen, Users, BarChart3, Shield, Zap, Globe, CreditCard, Award, FileText, Video, CheckCircle2, Settings } from 'lucide-react'
 
@@ -112,25 +110,25 @@ const featureCategories = [
 
 export default function FeaturesPage() {
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-background pt-12 sm:pt-20 lg:pt-32 pb-6 sm:pb-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
             Powerful features for modern learning
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground px-2 sm:px-0">
             Everything you need to create, deliver, and manage online courses.
           </p>
         </div>
 
-        <div className="mx-auto mt-16 space-y-24">
+        <div className="mx-auto mt-12 sm:mt-16 lg:mt-20 space-y-16 sm:space-y-20 lg:space-y-24">
           {featureCategories.map((category) => (
             <div key={category.title}>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-foreground">{category.title}</h2>
-                <p className="mt-2 text-lg text-muted-foreground">{category.description}</p>
+              <div className="text-center mb-8 sm:mb-12">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground">{category.title}</h2>
+                <p className="mt-2 text-base sm:text-lg text-muted-foreground">{category.description}</p>
               </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {category.features.map((feature) => {
                   const Icon = feature.icon
                   return (
@@ -151,55 +149,55 @@ export default function FeaturesPage() {
         </div>
 
         {/* Comparison Section */}
-        <div className="mx-auto mt-24 max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Compare with competitors</h2>
-            <p className="mt-2 text-lg text-muted-foreground">
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 max-w-4xl px-4 sm:px-0">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Compare with competitors</h2>
+            <p className="mt-2 text-base sm:text-lg text-muted-foreground">
               See how EaseLMS stacks up against other LMS platforms
             </p>
           </div>
           <Card>
-            <CardContent className="p-6">
-              <div className="overflow-x-auto">
-                <table className="w-full">
+            <CardContent className="p-4 sm:p-6">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[600px] sm:min-w-0">
                   <thead>
                     <tr className="border-b">
-                      <th className="text-left py-4 px-4 font-semibold">Feature</th>
-                      <th className="text-center py-4 px-4 font-semibold">EaseLMS</th>
-                      <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Moodle</th>
-                      <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Canvas</th>
+                      <th className="text-left py-3 sm:py-4 px-3 sm:px-4 font-semibold text-sm sm:text-base">Feature</th>
+                      <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-sm sm:text-base">EaseLMS</th>
+                      <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-sm sm:text-base text-muted-foreground">Moodle</th>
+                      <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-sm sm:text-base text-muted-foreground">Canvas</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b">
-                      <td className="py-4 px-4">Open Source</td>
-                      <td className="text-center py-4 px-4">✓</td>
-                      <td className="text-center py-4 px-4">✓</td>
-                      <td className="text-center py-4 px-4">✗</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Open Source</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✗</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-4">Modern Tech Stack</td>
-                      <td className="text-center py-4 px-4">✓</td>
-                      <td className="text-center py-4 px-4">✗</td>
-                      <td className="text-center py-4 px-4">✗</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Modern Tech Stack</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✗</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✗</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-4">Easy Setup</td>
-                      <td className="text-center py-4 px-4">✓</td>
-                      <td className="text-center py-4 px-4">✗</td>
-                      <td className="text-center py-4 px-4">✓</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Easy Setup</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✗</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-4">Payment Integration</td>
-                      <td className="text-center py-4 px-4">✓</td>
-                      <td className="text-center py-4 px-4">Limited</td>
-                      <td className="text-center py-4 px-4">✓</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Payment Integration</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Limited</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
                     </tr>
                     <tr>
-                      <td className="py-4 px-4">Hosted Option</td>
-                      <td className="text-center py-4 px-4">✓</td>
-                      <td className="text-center py-4 px-4">Limited</td>
-                      <td className="text-center py-4 px-4">✓</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Hosted Option</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Limited</td>
+                      <td className="text-center py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">✓</td>
                     </tr>
                   </tbody>
                 </table>
@@ -208,7 +206,6 @@ export default function FeaturesPage() {
           </Card>
         </div>
       </div>
-      <CTASection />
     </div>
   )
 }

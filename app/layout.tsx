@@ -9,7 +9,7 @@ import { Analytics } from '@vercel/analytics/react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'EaseLMS - The Modern Open-Source Learning Management System',
+  title: 'EaseLMS - Free Modern Open-Source LMS',
   description: 'Build, deploy, and scale your learning platform. Self-host for free or let us handle the infrastructure.',
   keywords: ['LMS', 'Learning Management System', 'Open Source', 'Online Learning', 'E-Learning'],
   authors: [{ name: 'EaseLMS' }],
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://easelms.com',
-    title: 'EaseLMS - The Modern Open-Source Learning Management System',
+    url: 'https://easelms.org',
+    title: 'EaseLMS - Free Modern Open-Source LMS',
     description: 'Build, deploy, and scale your learning platform.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EaseLMS - The Modern Open-Source Learning Management System',
+    title: 'EaseLMS - Free Modern Open-Source LMS',
     description: 'Build, deploy, and scale your learning platform.',
   },
 }
