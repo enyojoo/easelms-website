@@ -1,6 +1,6 @@
 'use client'
 
-import { BookOpen, Users, BarChart3, Shield, Zap, Globe, CreditCard, Award } from 'lucide-react'
+import { BookOpen, Users, BarChart3, Shield, Zap, Globe, CreditCard, Award, Plug } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { motion } from 'framer-motion'
 
@@ -44,6 +44,11 @@ const features = [
     name: 'Certificates',
     description: 'Automatically generate and issue certificates upon course completion.',
     icon: Award,
+  },
+  {
+    name: 'API & Integrations',
+    description: 'Extend functionality with RESTful API and integrate with your favorite tools and services.',
+    icon: Plug,
   },
 ]
 
