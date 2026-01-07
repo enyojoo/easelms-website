@@ -20,7 +20,7 @@ export function CTASection() {
             Ready to get started?
           </h2>
           <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-base sm:text-lg leading-7 sm:leading-8 opacity-90 px-2 sm:px-0">
-            Start your free trial today. No credit card required. Or deploy it yourself for free.
+            Start your free trial today. Or deploy it yourself for free.
           </p>
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-6">
             <Button asChild size="lg" variant="secondary" className="text-sm sm:text-base w-full sm:w-auto">

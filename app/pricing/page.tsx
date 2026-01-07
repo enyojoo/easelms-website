@@ -138,10 +138,6 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">✓</span>
-                  <span className="text-sm text-muted-foreground">No credit card required</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
                   <span className="text-sm text-muted-foreground">Automatic updates</span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -174,7 +170,8 @@ export default function PricingPage() {
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">What happens after my free trial?</h3>
               <p className="text-sm sm:text-base text-muted-foreground">
-                After your 14-day free trial, you'll be asked to choose a plan. Your data is safe and you can continue where you left off.
+                After your 14-day free trial ends, billing will automatically begin for your selected plan. You can cancel anytime before the trial ends to avoid charges. Please{' '}
+                <a href="/contact" className="text-primary hover:underline">contact us</a>, if you need to do this. Your data is safe and you can continue where you left off.
               </p>
             </div>
             <div>
