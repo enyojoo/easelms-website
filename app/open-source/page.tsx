@@ -205,7 +205,7 @@ export default function OpenSourcePage() {
         </div>
 
         {/* License */}
-        <div className="mx-auto mt-24 max-w-2xl text-center">
+        <div className="mx-auto mt-24 mb-24 max-w-2xl text-center">
           <h2 className="text-2xl font-bold mb-4">License</h2>
           <p className="text-muted-foreground">
             EaseLMS is licensed under the{' '}
