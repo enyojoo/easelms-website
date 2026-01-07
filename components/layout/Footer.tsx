@@ -20,7 +20,7 @@ const footerNavigation = {
   social: [
     {
       name: 'GitHub',
-      href: 'https://github.com/easelms/easelms',
+      href: 'https://github.com/enyojoo/easelms',
       icon: Github,
     },
     {

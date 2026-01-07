@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Github, Star, GitBranch, Users, BookOpen, Code, ArrowRight } from 'lucide-react'
+import { Github, Code, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { CTASection } from '@/components/marketing/CTASection'
@@ -18,21 +18,16 @@ export default function OpenSourcePage() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button asChild size="lg">
-              <Link href="https://github.com/easelms/easelms" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/enyojoo/easelms" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-5 w-5" />
                 Star on GitHub
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/docs">
-                <BookOpen className="mr-2 h-5 w-5" />
-                View Documentation
               </Link>
             </Button>
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Stats Section - Commented out until we have real stats */}
+        {/* 
         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-3">
           <Card>
             <CardHeader>
@@ -71,6 +66,7 @@ export default function OpenSourcePage() {
             </CardContent>
           </Card>
         </div>
+        */}
 
         {/* Why Open Source */}
         <div className="mx-auto mt-24 max-w-3xl">
@@ -128,7 +124,7 @@ export default function OpenSourcePage() {
                     <span className="text-muted-foreground"># Clone the repository</span>
                   </div>
                   <div>
-                    <span className="text-foreground">git clone https://github.com/easelms/easelms.git</span>
+                    <span className="text-foreground">git clone https://github.com/enyojoo/easelms.git</span>
                   </div>
                   <div className="pt-4">
                     <span className="text-muted-foreground"># Install dependencies</span>
@@ -144,12 +140,18 @@ export default function OpenSourcePage() {
                   </div>
                 </div>
               </div>
-              <Button asChild className="mt-6" variant="outline">
-                <Link href="/docs">
-                  View Full Documentation
-                  <ArrowRight className="ml-2 h-4 w-4" />
+              <p className="mt-6 text-sm text-muted-foreground text-center">
+                For detailed setup instructions, see the{' '}
+                <Link 
+                  href="https://github.com/enyojoo/easelms/blob/main/README.md" 
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  README.md
                 </Link>
-              </Button>
+                {' '}on GitHub.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -194,7 +196,7 @@ export default function OpenSourcePage() {
           </div>
           <div className="mt-8 text-center">
             <Button asChild>
-              <Link href="https://github.com/easelms/easelms/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/enyojoo/easelms/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">
                 View Contributing Guide
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -207,10 +209,14 @@ export default function OpenSourcePage() {
           <h2 className="text-2xl font-bold mb-4">License</h2>
           <p className="text-muted-foreground">
             EaseLMS is licensed under the{' '}
-            <Link href="https://www.gnu.org/licenses/agpl-3.0.html" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/enyojoo/easelms/blob/main/LICENSE" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
               GNU Affero General Public License v3.0
             </Link>
-            . This means you're free to use, modify, and distribute EaseLMS, even for commercial purposes.
+            {' '}(AGPL-3.0). This means you're free to use, modify, and distribute EaseLMS, even for commercial purposes. See the{' '}
+            <Link href="https://github.com/enyojoo/easelms/blob/main/LICENSE" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+              LICENSE file
+            </Link>
+            {' '}on GitHub for full details.
           </p>
         </div>
       </div>

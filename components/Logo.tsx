@@ -46,8 +46,8 @@ export function Logo({ className = '', variant = 'full' }: LogoProps) {
       <Image
         src={logoSrc}
         alt="EaseLMS"
-        width={variant === 'icon' ? 32 : 120}
-        height={variant === 'icon' ? 32 : 40}
+        width={variant === 'icon' ? 32 : 100}
+        height={variant === 'icon' ? 32 : 32}
         className="h-auto w-auto"
         priority
       />

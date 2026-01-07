@@ -41,7 +41,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-base">
-              <Link href="https://github.com/easelms/easelms" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/enyojoo/easelms" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 View on GitHub
               </Link>
