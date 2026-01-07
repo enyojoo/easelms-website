@@ -59,7 +59,7 @@ export function Features() {
             Powerful features designed for modern educational institutions and training organizations.
           </p>
         </div>
-        <div className="mx-auto mt-12 sm:mt-16 grid max-w-2xl grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+        <div className="mx-auto mt-12 sm:mt-16 grid max-w-2xl grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
