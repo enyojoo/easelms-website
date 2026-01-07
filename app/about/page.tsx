@@ -26,7 +26,7 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-background pt-12 sm:pt-20 lg:pt-32 pb-6 sm:pb-8">
+    <div className="bg-background pt-12 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="mx-auto max-w-2xl text-center">

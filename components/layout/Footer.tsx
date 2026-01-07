@@ -18,7 +18,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground text-center max-w-md">
             The modern open-source learning management system. Build, deploy, and scale your learning platform.
           </p>
-        </div>
+          </div>
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-6 mb-6">
@@ -30,12 +30,12 @@ export function Footer() {
             aria-label="GitHub"
           >
             <Github className="h-5 w-5 sm:h-6 sm:w-6" />
-          </Link>
-          <Link
+                  </Link>
+                    <Link
             href="https://x.com/enyosaam"
             className="text-muted-foreground hover:text-foreground transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
             aria-label="X"
           >
             <svg
@@ -46,8 +46,8 @@ export function Footer() {
             >
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
-          </Link>
-        </div>
+                    </Link>
+          </div>
 
         {/* Privacy and Terms */}
         <div className="flex justify-center space-x-6 mb-6">

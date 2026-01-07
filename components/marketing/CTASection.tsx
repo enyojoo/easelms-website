@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 export function CTASection() {
   return (
-    <section className="bg-white dark:bg-black text-black dark:text-white border-t border-border pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24">
+    <section className="bg-white dark:bg-black text-black dark:text-white border-t border-border py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mx-auto max-w-2xl text-center"

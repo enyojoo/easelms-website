@@ -1,6 +1,6 @@
 export default function PrivacyPage() {
   return (
-    <div className="py-24 sm:py-32">
+    <div className="pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pb-20">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-8">
           Privacy Policy

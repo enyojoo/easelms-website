@@ -43,7 +43,7 @@ export function PricingCard({ tier, billingPeriod }: PricingCardProps) {
         <div className="mt-4">
           <span className="text-4xl font-bold">{price}</span>
           {!isCustom && (
-            <span className="text-muted-foreground">/{billingPeriod === 'monthly' ? 'month' : 'year'}</span>
+          <span className="text-muted-foreground">/{billingPeriod === 'monthly' ? 'month' : 'year'}</span>
           )}
         </div>
         {billingPeriod === 'yearly' && !isCustom && (
