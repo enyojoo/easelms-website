@@ -1,3 +1,9 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service - EaseLMS',
+}
+
 export default function TermsPage() {
   return (
     <div className="pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pb-20">

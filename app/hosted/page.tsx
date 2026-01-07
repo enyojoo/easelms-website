@@ -1,7 +1,12 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Server, Shield, Zap, HeadphonesIcon, Database, Cloud } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+
+export const metadata: Metadata = {
+  title: 'Hosted - EaseLMS',
+}
 
 const benefits = [
   {

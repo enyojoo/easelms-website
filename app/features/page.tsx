@@ -1,5 +1,10 @@
+import type { Metadata } from 'next'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { BookOpen, Users, BarChart3, Shield, Zap, Globe, CreditCard, Award, FileText, Video, CheckCircle2, Settings } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Features - EaseLMS',
+}
 
 const featureCategories = [
   {
