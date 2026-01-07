@@ -27,7 +27,7 @@ const benefits = [
   {
     icon: Palette,
     title: 'Custom Branding',
-    description: 'We customize your platform with your own branding - platform name, logos, favicon, and SEO metadata to match your organization\'s identity.',
+    description: 'We customize your platform with your own branding - name, logos, favicon etc',
   },
   {
     icon: Database,
