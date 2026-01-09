@@ -22,18 +22,14 @@ export function CTASection() {
           <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-base sm:text-lg leading-7 sm:leading-8 opacity-90 px-2 sm:px-0">
             Start your free trial today. Or deploy it yourself for free.
           </p>
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-6">
-            <Button asChild size="lg" variant="secondary" className="text-sm sm:text-base w-full sm:w-auto">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-4 lg:gap-x-6">
+            <Button asChild size="lg" className="text-sm sm:text-base w-full sm:w-auto">
               <Link href="/pricing">
                 Start Free Trial
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button 
-              asChild 
-              size="lg" 
-              className="text-sm sm:text-base w-full sm:w-auto border-2 border-black dark:border-white/30 bg-transparent text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 hover:border-black/50 dark:hover:border-white/50"
-            >
+            <Button asChild variant="outline" size="lg" className="text-sm sm:text-base w-full sm:w-auto">
               <Link href="/open-source">
                 Self-Host for Free
               </Link>

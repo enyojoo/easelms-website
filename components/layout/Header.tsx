@@ -83,7 +83,7 @@ export function Header() {
             <div className="pt-4 mt-4 border-t space-y-3">
               <div className="flex items-center justify-between px-3">
                 <span className="text-sm font-medium text-foreground">Theme</span>
-                <ThemeToggle />
+              <ThemeToggle />
               </div>
               <Button asChild className="w-full" size="lg">
                 <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>

@@ -18,7 +18,7 @@ export function Hero() {
   // Determine which image to show based on theme
   const isDark = mounted && (theme === 'dark' || (theme === 'system' && systemTheme === 'dark'))
   const imageSrc = isDark 
-    ? 'https://cldup.com/x2iq4U6dfn.svg' 
+    ? 'https://cldup.com/8NpF8-KA0r.svg' 
     : 'https://cldup.com/pdxWxC-chv.svg'
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-12 sm:py-20 lg:py-32">
