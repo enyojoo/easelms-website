@@ -124,6 +124,13 @@ export default function FeaturesPage() {
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground px-2 sm:px-0">
             Everything you need to create, deliver, and manage online courses.
           </p>
+          <div className="mt-8 sm:mt-12 lg:mt-16">
+            <img
+              src="https://cldup.com/Q7m1m5bLmf.svg"
+              alt="EaseLMS Features"
+              className="w-full max-w-5xl mx-auto"
+            />
+          </div>
         </div>
 
         <div className="mx-auto mt-12 sm:mt-16 lg:mt-20 space-y-16 sm:space-y-20 lg:space-y-24">

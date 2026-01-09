@@ -47,6 +47,18 @@ export function Hero() {
               </Link>
             </Button>
           </motion.div>
+          <motion.div
+            className="mt-12 sm:mt-16 lg:mt-20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <img
+              src="https://cldup.com/T3C8y1hTlt.svg"
+              alt="EaseLMS Platform"
+              className="w-full max-w-5xl mx-auto"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
