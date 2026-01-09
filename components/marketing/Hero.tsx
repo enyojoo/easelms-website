@@ -4,8 +4,22 @@ import Link from 'next/link'
 import { ArrowRight, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export function Hero() {
+  const { theme, systemTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Determine which image to show based on theme
+  const isDark = mounted && (theme === 'dark' || (theme === 'system' && systemTheme === 'dark'))
+  const imageSrc = isDark 
+    ? 'https://cldup.com/x2iq4U6dfn.svg' 
+    : 'https://cldup.com/pdxWxC-chv.svg'
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-12 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -47,19 +61,23 @@ export function Hero() {
               </Link>
             </Button>
           </motion.div>
-          <motion.div
-            className="mt-12 sm:mt-16 lg:mt-20"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <img
-              src="https://cldup.com/T3C8y1hTlt.svg"
-              alt="EaseLMS Platform"
-              className="w-full max-w-5xl mx-auto"
-            />
-          </motion.div>
         </div>
+        <motion.div
+          className="mt-12 sm:mt-16 lg:mt-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {mounted ? (
+            <img
+              src={imageSrc}
+              alt="EaseLMS Platform"
+              className="w-full max-w-6xl mx-auto h-auto"
+            />
+          ) : (
+            <div className="w-full max-w-6xl mx-auto h-[400px] sm:h-[500px] lg:h-[600px] bg-muted animate-pulse rounded-lg" />
+          )}
+        </motion.div>
       </div>
     </section>
   )
