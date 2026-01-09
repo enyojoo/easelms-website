@@ -77,10 +77,8 @@ export function Hero() {
                   className="h-auto w-full sm:w-full max-w-full"
                   style={{
                     imageRendering: 'auto',
-                    WebkitImageRendering: 'auto',
                     shapeRendering: 'geometricPrecision',
                     backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden',
                     transform: 'translateZ(0)',
                   }}
                   width="2224"
