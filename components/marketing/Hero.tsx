@@ -69,11 +69,26 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           {mounted ? (
-            <img
-              src={imageSrc}
-              alt="EaseLMS Platform"
-              className="w-full max-w-6xl mx-auto h-auto"
-            />
+            <div className="w-full max-w-6xl mx-auto pl-4 sm:pl-0 overflow-x-hidden">
+              <div className="flex justify-end sm:justify-center">
+                <img
+                  src={imageSrc}
+                  alt="EaseLMS Platform"
+                  className="h-auto w-full sm:w-full max-w-full"
+                  style={{
+                    imageRendering: 'auto',
+                    WebkitImageRendering: 'auto',
+                    shapeRendering: 'geometricPrecision',
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)',
+                  }}
+                  width="2224"
+                  height="885"
+                  loading="eager"
+                />
+              </div>
+            </div>
           ) : (
             <div className="w-full max-w-6xl mx-auto h-[400px] sm:h-[500px] lg:h-[600px] bg-muted animate-pulse rounded-lg" />
           )}

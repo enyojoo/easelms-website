@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { Logo } from '@/components/Logo'
@@ -18,10 +18,18 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [headerHeight, setHeaderHeight] = useState(56)
+  const headerRef = useRef<HTMLElement>(null)
   const pathname = usePathname()
 
+  useEffect(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight)
+    }
+  }, [])
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header ref={headerRef} className="relative sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Logo className="h-5 w-auto sm:h-6 md:h-7" />
@@ -63,34 +71,46 @@ export function Header() {
       </nav>
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t">
-          <div className="px-4 py-4 space-y-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  'block rounded-md px-3 py-2.5 text-base font-semibold leading-7 transition-colors',
-                  pathname === item.href
-                    ? 'bg-accent text-accent-foreground'
-                    : 'text-foreground hover:bg-accent hover:text-accent-foreground'
-                )}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="pt-4 mt-4 border-t space-y-3">
-              <div className="flex items-center justify-between px-3">
-                <span className="text-sm font-medium text-foreground">Theme</span>
-              <ThemeToggle />
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
+            style={{ top: `${headerHeight}px` }}
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          {/* Menu */}
+          <div 
+            className="fixed left-0 right-0 lg:hidden border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/95 z-50 shadow-lg"
+            style={{ top: `${headerHeight}px` }}
+          >
+            <div className="px-4 py-4 space-y-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    'block rounded-md px-3 py-2.5 text-base font-semibold leading-7 transition-colors',
+                    pathname === item.href
+                      ? 'bg-accent text-accent-foreground'
+                      : 'text-foreground hover:bg-accent hover:text-accent-foreground'
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-4 mt-4 border-t space-y-3">
+                <div className="flex items-center justify-between px-3">
+                  <span className="text-sm font-medium text-foreground">Theme</span>
+                <ThemeToggle />
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
+                </Button>
               </div>
-              <Button asChild className="w-full" size="lg">
-                <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
-              </Button>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   )
