@@ -18,8 +18,8 @@ export function Hero() {
   // Determine which image to show based on theme
   const isDark = mounted && (theme === 'dark' || (theme === 'system' && systemTheme === 'dark'))
   const imageSrc = isDark 
-    ? 'https://cldup.com/8NpF8-KA0r.svg' 
-    : 'https://cldup.com/pdxWxC-chv.svg'
+    ? 'https://cldup.com/DEkhNWvz87.png' 
+    : 'https://cldup.com/g7W7DHpIxf.png'
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-12 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -77,12 +77,9 @@ export function Hero() {
                   className="h-auto w-full sm:w-full max-w-full"
                   style={{
                     imageRendering: 'auto',
-                    shapeRendering: 'geometricPrecision',
                     backfaceVisibility: 'hidden',
                     transform: 'translateZ(0)',
                   }}
-                  width="2224"
-                  height="885"
                   loading="eager"
                 />
               </div>
