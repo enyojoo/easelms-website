@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting.',
     images: [
       {
-        url: 'https://cldup.com/xDE0cJVUSK.png',
+        url: 'https://cldup.com/h0lZWMe1AG.png',
         width: 1200,
         height: 630,
         alt: 'EaseLMS - Free Modern Open-Source LMS',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'EaseLMS - Free Modern Open-Source LMS',
     description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting.',
-    images: ['https://cldup.com/xDE0cJVUSK.png'],
+    images: ['https://cldup.com/h0lZWMe1AG.png'],
   },
 }
 
