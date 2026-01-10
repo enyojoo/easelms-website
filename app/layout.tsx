@@ -11,8 +11,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.easelms.org'),
-  title: 'EaseLMS - Free Open-Source Learning Management System',
-  description: 'EaseLMS is a free, modern open-source learning management system. Self-host for free or choose managed hosting. Build courses, track progress, and scale your online education platform.',
+  title: {
+    default: 'EaseLMS | Free Open-Source Learning Management System',
+    template: '%s | EaseLMS',
+  },
+  description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting. Build courses, track progress, and scale your online education.',
   keywords: [
     'LMS',
     'Learning Management System',
@@ -69,20 +72,20 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.easelms.org',
     siteName: 'EaseLMS',
-    title: 'EaseLMS - Free Open-Source Learning Management System',
+    title: 'EaseLMS | Free Open-Source Learning Management System',
     description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting.',
     images: [
       {
         url: 'https://cldup.com/h0lZWMe1AG.png',
         width: 1200,
         height: 630,
-        alt: 'EaseLMS - Free Open-Source Learning Management System',
+        alt: 'EaseLMS | Free Open-Source Learning Management System',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EaseLMS - Free Open-Source Learning Management System',
+    title: 'EaseLMS | Free Open-Source Learning Management System',
     description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting.',
     images: ['https://cldup.com/h0lZWMe1AG.png'],
   },
@@ -93,9 +96,34 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'EaseLMS',
+    url: 'https://www.easelms.org',
+    description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Easner, Inc.',
+      url: 'https://www.easelms.org',
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.easelms.org/search?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <PostHogProvider>
           <ThemeProvider
             attribute="class"
