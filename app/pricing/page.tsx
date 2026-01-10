@@ -158,10 +158,6 @@ export default function PricingPage() {
               <ul className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
                 <li className="flex items-start gap-2">
                   <span className="text-primary">✓</span>
-                  <span className="text-sm text-muted-foreground">14-day free trial (monthly plans)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
                   <span className="text-sm text-muted-foreground">Automatic updates</span>
                 </li>
                 <li className="flex items-start gap-2">
