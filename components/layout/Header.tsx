@@ -84,32 +84,32 @@ export function Header() {
             style={{ top: `${headerHeight}px` }}
           >
             <div className="px-4 py-4 space-y-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
                     'block rounded-md px-3 py-2.5 text-base font-semibold leading-7 transition-colors',
-                    pathname === item.href
-                      ? 'bg-accent text-accent-foreground'
-                      : 'text-foreground hover:bg-accent hover:text-accent-foreground'
-                  )}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+                  pathname === item.href
+                    ? 'bg-accent text-accent-foreground'
+                    : 'text-foreground hover:bg-accent hover:text-accent-foreground'
+                )}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
               <div className="pt-4 mt-4 border-t space-y-3">
                 <div className="flex items-center justify-between px-3">
                   <span className="text-sm font-medium text-foreground">Theme</span>
-                <ThemeToggle />
+              <ThemeToggle />
                 </div>
                 <Button asChild className="w-full" size="lg">
                   <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
-                </Button>
-              </div>
+              </Button>
             </div>
           </div>
+        </div>
         </>
       )}
     </header>

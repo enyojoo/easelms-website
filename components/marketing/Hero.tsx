@@ -62,12 +62,12 @@ export function Hero() {
             </Button>
           </motion.div>
         </div>
-        <motion.div
+          <motion.div
           className="mt-12 sm:mt-16 lg:mt-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
           {mounted ? (
             <div className="w-full max-w-6xl mx-auto pl-4 sm:pl-0 overflow-x-hidden">
               <div className="flex justify-end sm:justify-center">
@@ -87,7 +87,7 @@ export function Hero() {
           ) : (
             <div className="w-full max-w-6xl mx-auto h-[400px] sm:h-[500px] lg:h-[600px] bg-muted animate-pulse rounded-lg" />
           )}
-        </motion.div>
+          </motion.div>
       </div>
     </section>
   )
