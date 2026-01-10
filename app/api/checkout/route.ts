@@ -33,6 +33,10 @@ export async function POST(request: NextRequest) {
       ? [{ promotion_code: process.env.STRIPE_YEARLY_DISCOUNT_CODE }]
       : undefined
 
+    // Yearly plans don't get trial since they already have 20% discount
+    // Monthly plans get 14-day free trial
+    const trialPeriodDays = billingPeriod === 'yearly' ? undefined : 14
+
     // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -44,7 +48,7 @@ export async function POST(request: NextRequest) {
       ],
       mode: 'subscription',
       subscription_data: {
-        trial_period_days: 14, // 14-day free trial
+        ...(trialPeriodDays && { trial_period_days: trialPeriodDays }), // 14-day free trial for monthly only
         metadata: {
           plan: plan,
           billingPeriod: billingPeriod,
@@ -57,8 +61,9 @@ export async function POST(request: NextRequest) {
         billingPeriod: billingPeriod,
       },
       customer_email: undefined, // Will be collected in checkout
-      allow_promotion_codes: true, // Allow manual promotion codes too
-      discounts: discounts, // Automatically apply yearly discount
+      // Only allow promotion codes if we're not applying automatic discounts
+      // Stripe doesn't allow both allow_promotion_codes and discounts at the same time
+      ...(discounts ? { discounts } : { allow_promotion_codes: true }),
     })
 
     return NextResponse.json({ sessionId: session.id, url: session.url })
