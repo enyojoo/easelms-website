@@ -53,9 +53,16 @@ export const metadata: Metadata = {
     canonical: 'https://www.easelms.org',
   },
   icons: {
-    icon: 'https://cldup.com/6yEKvPtX22.svg',
-    shortcut: 'https://cldup.com/6yEKvPtX22.svg',
-    apple: 'https://cldup.com/6yEKvPtX22.svg',
+    icon: [
+      { url: 'https://cldup.com/6yEKvPtX22.svg', type: 'image/svg+xml' },
+      { url: 'https://cldup.com/6yEKvPtX22.svg', sizes: 'any' },
+    ],
+    shortcut: [
+      { url: 'https://cldup.com/6yEKvPtX22.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: 'https://cldup.com/6yEKvPtX22.svg', sizes: '180x180' },
+    ],
   },
   openGraph: {
     type: 'website',
