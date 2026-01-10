@@ -12,12 +12,22 @@ function getStripeInstance() {
 }
 
 export async function POST(request: NextRequest) {
+  let priceId: string | undefined
   try {
-    const { plan, billingPeriod, priceId } = await request.json()
+    const body = await request.json()
+    const { plan, billingPeriod, priceId: requestedPriceId } = body
+    priceId = requestedPriceId
 
     if (!plan || !billingPeriod) {
       return NextResponse.json(
         { error: 'Missing plan or billing period' },
+        { status: 400 }
+      )
+    }
+
+    if (!priceId || priceId.trim() === '') {
+      return NextResponse.json(
+        { error: `Missing Price ID for ${plan} ${billingPeriod} plan. Please check your environment variables.` },
         { status: 400 }
       )
     }
@@ -70,8 +80,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ sessionId: session.id, url: session.url })
   } catch (error: any) {
     console.error('Stripe checkout error:', error)
+    
+    // Provide more helpful error messages
+    let errorMessage = error.message || 'Failed to create checkout session'
+    
+    if (error.type === 'StripeInvalidRequestError') {
+      if (error.message?.includes('No such price')) {
+        errorMessage = `Invalid Price ID${priceId ? `: ${priceId}` : ''}. Please verify the Price ID exists in your Stripe Dashboard and matches your environment variables.`
+      } else if (error.message?.includes('promotion_code')) {
+        errorMessage = `Invalid promotion code. Please check STRIPE_YEARLY_DISCOUNT_CODE environment variable.`
+      }
+    } else if (error.message?.includes('STRIPE_SECRET_KEY')) {
+      errorMessage = 'Stripe secret key is not configured. Please set STRIPE_SECRET_KEY environment variable.'
+    }
+    
     return NextResponse.json(
-      { error: error.message || 'Failed to create checkout session' },
+      { error: errorMessage, details: process.env.NODE_ENV === 'development' ? error.stack : undefined },
       { status: 500 }
     )
   }
