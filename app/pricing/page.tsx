@@ -109,7 +109,7 @@ export default function PricingPage() {
             Simple, transparent pricing
           </h1>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground px-2 sm:px-0">
-            Choose the plan that's right for you. All plans include a 14-day free trial.
+            Choose the plan that's right for you. Monthly plans include a 14-day free trial, yearly plans save 20%.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export default function PricingPage() {
               <ul className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
                 <li className="flex items-start gap-2">
                   <span className="text-primary">✓</span>
-                  <span className="text-sm text-muted-foreground">14-day free trial</span>
+                  <span className="text-sm text-muted-foreground">14-day free trial (monthly plans)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary">✓</span>
@@ -194,8 +194,8 @@ export default function PricingPage() {
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">What happens after my free trial?</h3>
               <p className="text-sm sm:text-base text-muted-foreground">
-                After your 14-day free trial ends, billing will automatically begin for your selected plan. You can cancel anytime before the trial ends to avoid charges. Please{' '}
-                <a href="/contact" className="text-primary hover:underline">contact us</a>, if you need to do this. Your data is safe and you can continue where you left off.
+                Monthly plans include a 14-day free trial. After the trial ends, billing will automatically begin. Yearly plans start billing immediately but include a 20% discount. You can cancel anytime before the trial ends (monthly plans) to avoid charges. Please{' '}
+                <a href="/contact" className="text-primary hover:underline">contact us</a>, if you need to cancel. Your data is safe and you can continue where you left off.
               </p>
             </div>
             <div>
