@@ -21,7 +21,7 @@ export function Hero() {
     ? 'https://cldup.com/DEkhNWvz87.png' 
     : 'https://cldup.com/g7W7DHpIxf.png'
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-12 sm:py-20 lg:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 pt-12 sm:pt-20 lg:pt-32 pb-8 sm:pb-12 lg:pb-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <motion.div
