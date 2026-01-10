@@ -61,9 +61,10 @@ export async function POST(request: NextRequest) {
         billingPeriod: billingPeriod,
       },
       customer_email: undefined, // Will be collected in checkout
-      // Only allow promotion codes if we're not applying automatic discounts
+      // Only apply automatic discounts for yearly plans
+      // Monthly plans get trial period, yearly plans get 20% discount
       // Stripe doesn't allow both allow_promotion_codes and discounts at the same time
-      ...(discounts ? { discounts } : { allow_promotion_codes: true }),
+      ...(discounts && { discounts }),
     })
 
     return NextResponse.json({ sessionId: session.id, url: session.url })
