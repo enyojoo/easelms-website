@@ -131,12 +131,14 @@ To handle subscription events (e.g., payment success, cancellation), set up webh
 2. Create test products/prices in Stripe Dashboard
 3. Use test card: `4242 4242 4242 4242`
 4. Any future expiry date and any CVC
+5. **Note**: During the 14-day trial, Stripe will still require a payment method, but won't charge until the trial ends
 
 ### Live Mode
 
 1. Switch to live API keys
 2. Use real products/prices
 3. Test with a real card (you can refund test payments)
+4. **Note**: Customers will have a 14-day free trial before billing begins
 
 ## Step 6: Verify the Setup
 
@@ -175,9 +177,17 @@ After basic setup works:
 
 1. **Handle webhooks** to update your database when subscriptions are created/updated
 2. **Add customer portal** for subscription management
-3. **Implement trial period** logic (currently handled by Stripe)
-4. **Add email notifications** for successful payments
-5. **Set up subscription management** page for users
+3. **Add email notifications** for successful payments and trial reminders
+4. **Set up subscription management** page for users
+5. **Configure trial end notifications** to remind customers before billing starts
+
+## Trial Period
+
+The integration includes a **14-day free trial** for all plans:
+- Customers enter payment details but are not charged during the trial
+- Billing automatically begins after 14 days
+- Customers can cancel anytime during the trial to avoid charges
+- Stripe handles all trial period logic automatically
 
 ## Support
 

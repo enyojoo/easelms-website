@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { getStripe } from '@/lib/stripe'
 import { Loader2 } from 'lucide-react'
 
 interface CheckoutButtonProps {
@@ -50,15 +49,11 @@ export function CheckoutButton({
       }
 
       // Redirect to Stripe Checkout
-      const stripe = await getStripe()
-      if (stripe) {
-        const { error } = await stripe.redirectToCheckout({
-          sessionId: data.sessionId,
-        })
-
-        if (error) {
-          throw error
-        }
+      if (data.url) {
+        // Use the checkout URL directly from Stripe
+        window.location.href = data.url
+      } else {
+        throw new Error('No checkout URL received from server')
       }
     } catch (error: any) {
       console.error('Checkout error:', error)

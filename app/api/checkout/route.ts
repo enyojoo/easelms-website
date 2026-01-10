@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-12-18.acacia',
-})
+function getStripeInstance() {
+  const secretKey = process.env.STRIPE_SECRET_KEY
+  if (!secretKey) {
+    throw new Error('STRIPE_SECRET_KEY is not set')
+  }
+  return new Stripe(secretKey, {
+    apiVersion: '2025-12-15.clover',
+  })
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,6 +21,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Initialize Stripe
+    const stripe = getStripeInstance()
 
     // Get the base URL for redirects
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || request.headers.get('origin') || 'http://localhost:3001'
@@ -34,6 +43,13 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'subscription',
+      subscription_data: {
+        trial_period_days: 14, // 14-day free trial
+        metadata: {
+          plan: plan,
+          billingPeriod: billingPeriod,
+        },
+      },
       success_url: `${baseUrl}/pricing/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/pricing?canceled=true`,
       metadata: {
