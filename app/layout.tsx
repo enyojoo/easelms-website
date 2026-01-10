@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.easelms.org'),
-  title: 'EaseLMS - Free Modern Open-Source LMS',
+  title: 'EaseLMS - Free Open-Source Learning Management System',
   description: 'EaseLMS is a free, modern open-source learning management system. Self-host for free or choose managed hosting. Build courses, track progress, and scale your online education platform.',
   keywords: [
     'LMS',
@@ -62,20 +62,20 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.easelms.org',
     siteName: 'EaseLMS',
-    title: 'EaseLMS - Free Modern Open-Source LMS',
+    title: 'EaseLMS - Free Open-Source Learning Management System',
     description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting.',
     images: [
       {
         url: 'https://cldup.com/h0lZWMe1AG.png',
         width: 1200,
         height: 630,
-        alt: 'EaseLMS - Free Modern Open-Source LMS',
+        alt: 'EaseLMS - Free Open-Source Learning Management System',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EaseLMS - Free Modern Open-Source LMS',
+    title: 'EaseLMS - Free Open-Source Learning Management System',
     description: 'Free, modern open-source learning management system. Self-host for free or choose managed hosting.',
     images: ['https://cldup.com/h0lZWMe1AG.png'],
   },
