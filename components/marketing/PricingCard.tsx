@@ -80,7 +80,7 @@ export function PricingCard({ tier, billingPeriod }: PricingCardProps) {
             variant={tier.popular ? 'default' : 'outline'}
             className="w-full"
           >
-            {tier.cta}
+            {billingPeriod === 'monthly' ? 'Start Free Trial' : 'Get Started'}
           </CheckoutButton>
         )}
       </CardFooter>
