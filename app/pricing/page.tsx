@@ -5,12 +5,28 @@ import { PricingCard, PricingTier } from '@/components/marketing/PricingCard'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
+// Helper function to get price IDs from environment
+const getPriceIds = () => ({
+  starter: {
+    monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_STARTER_MONTHLY || '',
+    yearly: process.env.NEXT_PUBLIC_STRIPE_PRICE_STARTER_YEARLY || '',
+  },
+  professional: {
+    monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_PROFESSIONAL_MONTHLY || '',
+    yearly: process.env.NEXT_PUBLIC_STRIPE_PRICE_PROFESSIONAL_YEARLY || '',
+  },
+})
+
 const pricingTiers: PricingTier[] = [
   {
     name: 'Starter',
     price: {
       monthly: '$99',
       yearly: '$950',
+    },
+    priceId: {
+      monthly: getPriceIds().starter.monthly,
+      yearly: getPriceIds().starter.yearly,
     },
     description: 'Perfect for small teams and organizations getting started.',
     features: [
@@ -31,6 +47,10 @@ const pricingTiers: PricingTier[] = [
     price: {
       monthly: '$299',
       yearly: '$2,870',
+    },
+    priceId: {
+      monthly: getPriceIds().professional.monthly,
+      yearly: getPriceIds().professional.yearly,
     },
     description: 'Ideal for growing organizations with advanced needs.',
     features: [
@@ -54,6 +74,10 @@ const pricingTiers: PricingTier[] = [
     price: {
       monthly: 'Custom',
       yearly: 'Custom',
+    },
+    priceId: {
+      monthly: '',
+      yearly: '',
     },
     description: 'For large organizations with custom requirements.',
     features: [

@@ -4,11 +4,16 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { CheckoutButton } from '@/components/marketing/CheckoutButton'
 import { cn } from '@/lib/utils'
 
 export interface PricingTier {
   name: string
   price: {
+    monthly: string
+    yearly: string
+  }
+  priceId: {
     monthly: string
     yearly: string
   }
@@ -63,14 +68,21 @@ export function PricingCard({ tier, billingPeriod }: PricingCardProps) {
         </ul>
       </CardContent>
       <CardFooter>
-        <Button
-          asChild
-          className="w-full"
-          variant={tier.popular ? 'default' : 'outline'}
-          size="lg"
-        >
-          <Link href={tier.ctaLink}>{tier.cta}</Link>
-        </Button>
+        {tier.name === 'Enterprise' ? (
+          <Button asChild className="w-full" variant="outline" size="lg">
+            <Link href={tier.ctaLink}>{tier.cta}</Link>
+          </Button>
+        ) : (
+          <CheckoutButton
+            plan={tier.name.toLowerCase()}
+            billingPeriod={billingPeriod}
+            priceId={billingPeriod === 'monthly' ? tier.priceId.monthly : tier.priceId.yearly}
+            variant={tier.popular ? 'default' : 'outline'}
+            className="w-full"
+          >
+            {tier.cta}
+          </CheckoutButton>
+        )}
       </CardFooter>
     </Card>
   )
