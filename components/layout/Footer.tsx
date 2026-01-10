@@ -49,13 +49,16 @@ export function Footer() {
                     </Link>
           </div>
 
-        {/* Privacy and Terms */}
-        <div className="flex justify-center space-x-6 mb-6">
+        {/* Privacy, Terms, and Manage Subscription */}
+        <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 mb-6">
           <Link href="/privacy" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
             Privacy
           </Link>
           <Link href="/terms" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
             Terms
+          </Link>
+          <Link href="/manage-subscription" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Manage Subscription
           </Link>
         </div>
       </div>
