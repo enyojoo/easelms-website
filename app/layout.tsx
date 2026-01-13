@@ -57,14 +57,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: 'https://cldup.com/6yEKvPtX22.svg', type: 'image/svg+xml' },
-      { url: 'https://cldup.com/6yEKvPtX22.svg', sizes: 'any' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', type: 'image/png' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', sizes: '32x32', type: 'image/png' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', sizes: '16x16', type: 'image/png' },
     ],
     shortcut: [
-      { url: 'https://cldup.com/6yEKvPtX22.svg', type: 'image/svg+xml' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', type: 'image/png' },
     ],
     apple: [
-      { url: 'https://cldup.com/6yEKvPtX22.svg', sizes: '180x180' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   openGraph: {
