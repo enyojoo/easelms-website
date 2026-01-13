@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: 'https://cldup.com/u4LIwebahZ.png', type: 'image/png' },
-      { url: 'https://cldup.com/u4LIwebahZ.png', sizes: '32x32', type: 'image/png' },
-      { url: 'https://cldup.com/u4LIwebahZ.png', sizes: '16x16', type: 'image/png' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', type: 'image/png', sizes: 'any' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', type: 'image/png', sizes: '192x192' },
+      { url: 'https://cldup.com/u4LIwebahZ.png', type: 'image/png', sizes: '512x512' },
     ],
     shortcut: [
       { url: 'https://cldup.com/u4LIwebahZ.png', type: 'image/png' },
