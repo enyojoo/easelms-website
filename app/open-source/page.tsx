@@ -122,12 +122,12 @@ export default function OpenSourcePage() {
               <CardDescription className="text-sm sm:text-base">Get started in minutes</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="rounded-lg bg-muted p-4 font-mono text-sm">
-                <div className="space-y-2">
+              <div className="rounded-lg bg-muted p-4 font-mono text-sm overflow-x-auto">
+                <div className="space-y-2 min-w-0">
                   <div>
                     <span className="text-muted-foreground"># Clone the repository</span>
                   </div>
-                  <div>
+                  <div className="break-all sm:break-normal">
                     <span className="text-foreground">git clone https://github.com/enyojoo/easelms.git</span>
                   </div>
                   <div className="pt-4">
