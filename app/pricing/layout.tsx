@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pricing - EaseLMS',
+  title: 'Pricing',
 }
 
 export default function PricingLayout({

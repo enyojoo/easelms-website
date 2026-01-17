@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { BookOpen, Users, BarChart3, Shield, Zap, Globe, CreditCard, Award, FileText, Video, CheckCircle2, Settings } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Modern LMS Features - EaseLMS',
+  title: 'Modern LMS Features',
 }
 
 const featureCategories = [

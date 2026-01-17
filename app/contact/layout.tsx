@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact - EaseLMS',
+  title: 'Contact',
 }
 
 export default function ContactLayout({

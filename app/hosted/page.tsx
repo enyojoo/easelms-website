@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Hosted LMS Service - EaseLMS',
+  title: 'Hosted LMS Service',
 }
 
 const benefits = [

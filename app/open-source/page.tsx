@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Deploy Open Source LMS - EaseLMS',
+  title: 'Deploy Open Source LMS',
 }
 
 export default function OpenSourcePage() {
